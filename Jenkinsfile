@@ -6,9 +6,6 @@ parameters {
                             booleanParam(name: 'REBUILD DATABASE', defaultValue: true, description: 'Should we rebuild the database')
                             booleanParam(name: 'DEPLOY', defaultValue: true, description: 'should we deploy the application')
              }
-node {
- 	// Clean workspace before doing anything
-    deleteDir()
 
     try {
         stage ('Clone') {
