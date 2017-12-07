@@ -9,7 +9,7 @@ node {
         }
         stage ('Build') {
         	sh "echo 'shell scripts to build project..'"
-		sh "echo 'shell in the bell...'"
+		sh "echo 'shell in the'"
         }
         stage ('Tests') {
 	        parallel 'static': {
