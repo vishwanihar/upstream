@@ -1,4 +1,4 @@
-properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/vishwanihar/upstream.git/'], pipelineTriggers([githubPush()])])
+properties([parameters([choice(choices: ['"Integration/n unittesting"'], description: 'Testing environment', name: 'Environment'), booleanParam(defaultValue: false, description: 'Database buiding', name: 'Rebuild Database'), booleanParam(defaultValue: false, description: 'deployingg', name: 'Deploy'), string(defaultValue: 'Default', description: 'Default branch', name: 'Branch')]), pipelineTriggers([])])
 node {
  	// Clean workspace before doing anything
     deleteDir()
