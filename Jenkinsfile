@@ -8,30 +8,13 @@ parameters {
                             booleanParam(name: 'DEPLOY', defaultValue: true, description: 'should we deploy the application')
              }
 
-   stages {
-        stage ('Clone') {
-        	checkout scm
+    stages {
+        stage('Build') { 
+            steps { 
+                echo 'Hello'
+            }
         }
-        stage ('Build') {
-        	sh "echo 'shell scripts to build project jjj'"
-		
-        }
-        stage ('Tests') {
-	        parallel 'static': {
-	            sh "echo 'shell scripts to run static tests...'"
-	        },
-	        'unit': {
-	            sh "echo 'shell scripts to run unit tests...'"
-	        },
-	        'integration': {
-	            sh "echo 'shell scripts to run integration tests...'"
-	        }
-        }
-      	stage ('Deploy') {
-            sh "echo 'shell scripts to deploy to server...'"
-      	}
-    } 
-   }
-
-
+      
+    }
+}
 
