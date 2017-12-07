@@ -8,7 +8,8 @@ node {
         	checkout scm
         }
         stage ('Build') {
-        	sh "echo 'shell scripts to build project hahahah..'"
+        	sh "echo 'shell scripts to build project..'"
+		sh "echo 'shell in the bell..."
         }
         stage ('Tests') {
 	        parallel 'static': {
