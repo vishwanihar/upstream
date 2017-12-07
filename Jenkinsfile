@@ -1,4 +1,11 @@
-parameters([choice(choices: ['"Integration/n unittesting"'], description: 'Testing environment', name: 'Environment'), booleanParam(defaultValue: false, description: 'Database buiding', name: 'Rebuild Database'), booleanParam(defaultValue: false, description: 'deployingg', name: 'Deploy'), string(defaultValue: 'Default', description: 'Default branch', name: 'Branch')])
+agent any
+parameters {
+                            string(defaultValue: "default", description: 'Select Branch here ', name: 'Branch')
+                           // choices are newline separated
+                            choice(choices: 'Integration\nUnit', description: 'Used for posgress sh and codedeploy deployment group', name: 'Environment')
+                            booleanParam(name: 'REBUILD DATABASE', defaultValue: true, description: 'Should we rebuild the database')
+                            booleanParam(name: 'DEPLOY', defaultValue: true, description: 'should we deploy the application')
+             }
 node {
  	// Clean workspace before doing anything
     deleteDir()
