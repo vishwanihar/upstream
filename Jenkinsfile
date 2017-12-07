@@ -1,3 +1,4 @@
+pipeline {
 agent any
 parameters {
                             string(defaultValue: "default", description: 'Select Branch here ', name: 'Branch')
@@ -33,6 +34,6 @@ parameters {
         currentBuild.result = 'FAILED'
         throw err
    }
-
+}
 
 
