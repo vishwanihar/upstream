@@ -1,4 +1,4 @@
-properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/vishwanihar/upstream.git/'], pipelineTriggers([upstream('job-2, ')])])
+properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/vishwanihar/upstream.git/'], pipelineTriggers([githubPush()])])
 node {
  	// Clean workspace before doing anything
     deleteDir()
