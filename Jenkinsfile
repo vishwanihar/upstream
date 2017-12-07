@@ -32,8 +32,7 @@ parameters {
     } catch (err) {
         currentBuild.result = 'FAILED'
         throw err
-    }
-}
+   }
 
 
 
