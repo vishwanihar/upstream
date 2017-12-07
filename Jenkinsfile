@@ -1,4 +1,3 @@
-!#/bin/bash
 properties([[$class: 'GithubProjectProperty', displayName: '', projectUrlStr: 'https://github.com/vishwanihar/upstream.git/'], pipelineTriggers([githubPush()])])
 node {
  	// Clean workspace before doing anything
