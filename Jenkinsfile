@@ -8,7 +8,7 @@ parameters {
                             booleanParam(name: 'DEPLOY', defaultValue: true, description: 'should we deploy the application')
              }
 
-    try {
+   stages {
         stage ('Clone') {
         	checkout scm
         }
@@ -30,10 +30,8 @@ parameters {
       	stage ('Deploy') {
             sh "echo 'shell scripts to deploy to server...'"
       	}
-    } catch (err) {
-        currentBuild.result = 'FAILED'
-        throw err
+    } 
    }
-}
+
 
 
